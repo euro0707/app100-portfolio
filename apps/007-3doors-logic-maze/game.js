@@ -471,13 +471,23 @@ class ThreeDoorsLogicMaze {
             doors = [{ id: "left", pos: positions.goalLeft, condition: { type: "hasItem", value: "key-red" }, icon: "🔑" }];
         }
         
+        // 選択されたパターンに応じた開始位置を設定
+        const startPositions = [
+            { x: 1, y: 1 },  // パターン1: オリジナル
+            { x: 1, y: 1 },  // パターン2: L字型
+            { x: 1, y: 1 },  // パターン3: 螺旋型
+            { x: 1, y: 1 },  // パターン4: 十字型
+            { x: 1, y: 1 }   // パターン5: ジグザグ
+        ];
+        const safeStart = startPositions[this.selectedPatternIndex] || { x: 1, y: 1 };
+
         this.mazeData = {
             id: "sample_maze",
             tileSize: 32,
             width: 10,
             height: 15,
             grid: grid,
-            start: { x: 1, y: 1 },
+            start: safeStart,
             goalArea: positions.goalMiddle,  // 目標エリアも更新
             items: items,
             switches: switches,
@@ -657,6 +667,9 @@ class ThreeDoorsLogicMaze {
                 grid[y][x] = 1;
             }
         });
+        
+        // スタート位置 (1,1) を確実に通れるようにする
+        grid[1][1] = 1;
     }
     
     // 迷路パターンに応じたアイテム位置を取得
