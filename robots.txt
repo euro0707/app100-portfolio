@@ -1,0 +1,24 @@
+# Robots.txt for app100-portfolio
+# Security and privacy configuration
+
+User-agent: *
+Allow: /
+Allow: /apps/
+
+# Block sensitive paths
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /node_modules/
+Disallow: /.env
+Disallow: /.env.*
+Disallow: /config/
+Disallow: /logs/
+Disallow: /admin/
+Disallow: /test/
+Disallow: /_private/
+
+# Sitemap location (will be created later)
+# Sitemap: https://euro0707.github.io/app100-portfolio/sitemap.xml
+
+# Crawl delay to prevent aggressive scraping
+Crawl-delay: 1
