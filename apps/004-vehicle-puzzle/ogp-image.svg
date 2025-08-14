@@ -1,0 +1,62 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e3f2fd"/>
+      <stop offset="100%" style="stop-color:#bbdefb"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Main Title -->
+  <text x="600" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#1976d2">
+    🚗 乗り物パズル
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" fill="#424242">
+    4〜6歳向けドラッグ&amp;ドロップパズル
+  </text>
+  
+  <!-- Vehicle Icons -->
+  <g transform="translate(300, 250)">
+    <!-- Car Level -->
+    <rect x="0" y="0" width="180" height="120" rx="15" fill="white" stroke="#4caf50" stroke-width="3"/>
+    <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#2e7d32">かんたん</text>
+    <text x="90" y="75" text-anchor="middle" font-size="48">🚗</text>
+    <text x="90" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">3ピース</text>
+  </g>
+  
+  <g transform="translate(510, 250)">
+    <!-- Train Level -->
+    <rect x="0" y="0" width="180" height="120" rx="15" fill="white" stroke="#ff9800" stroke-width="3"/>
+    <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#f57c00">ふつう</text>
+    <text x="90" y="75" text-anchor="middle" font-size="48">🚂</text>
+    <text x="90" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">4ピース</text>
+  </g>
+  
+  <g transform="translate(720, 250)">
+    <!-- Plane Level -->
+    <rect x="0" y="0" width="180" height="120" rx="15" fill="white" stroke="#f44336" stroke-width="3"/>
+    <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#d32f2f">むずかしい</text>
+    <text x="90" y="75" text-anchor="middle" font-size="48">✈️</text>
+    <text x="90" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">6ピース</text>
+  </g>
+  
+  <!-- Features -->
+  <text x="600" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#424242">
+    🎯 空間認識力を育む教育ゲーム
+  </text>
+  
+  <!-- App Info -->
+  <text x="600" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#666">
+    App #004/100 | 100 Apps Journey
+  </text>
+  
+  <!-- URL -->
+  <text x="600" y="570" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#1976d2">
+    euro0707.github.io/app100
+  </text>
+</svg>

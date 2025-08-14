@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動物と食べ物マッチングゲーム | 002 - 100 Apps Journey</title>
+    
+    <!-- OGP Meta Tags -->
+    <meta property="og:title" content="動物と食べ物マッチングゲーム | 002 - 100 Apps Journey">
+    <meta property="og:description" content="4〜6歳の子ども向けの教育的マッチングゲーム。動物とその食べ物を正しくペアにすることで学習します。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://euro0707.github.io/app100/app/002-animal-food-matching/">
+    <meta property="og:image" content="https://euro0707.github.io/app100/app/002-animal-food-matching/ogp-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="100 Apps Journey">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="動物と食べ物マッチングゲーム | 002 - 100 Apps Journey">
+    <meta name="twitter:description" content="4〜6歳の子ども向けの教育的マッチングゲーム。動物とその食べ物を正しくペアにすることで学習します。">
+    <meta name="twitter:image" content="https://euro0707.github.io/app100/app/002-animal-food-matching/ogp-image.png">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="description" content="4〜6歳の子ども向けの教育的マッチングゲーム。動物とその食べ物を正しくペアにすることで学習します。">
+    <meta name="keywords" content="動物,食べ物,マッチング,ゲーム,子ども,教育,知育,学習">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>🦁 動物と食べ物マッチングゲーム 🍎</h1>
+            <p class="instructions">動物が何を食べるか、正しいペアを見つけよう！</p>
+        </header>
+
+        <div class="game-content">
+            <!-- ゲーム統計 -->
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">ステップ</span>
+                    <span class="stat-value" id="currentStep">1</span>
+                    <span class="stat-total">/ <span id="totalSteps">5</span></span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">正解数</span>
+                    <span class="stat-value" id="correctCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">チャレンジ数</span>
+                    <span class="stat-value" id="attemptCount">0</span>
+                </div>
+            </div>
+
+            <!-- ヒントセクション -->
+            <div class="hint-section">
+                <div class="hint-bubble" id="hintText">
+                    ゲームを開始しましょう！
+                </div>
+                <div class="hint-character">👨‍👩‍👧‍👦</div>
+            </div>
+
+            <!-- ゲームボード -->
+            <div class="game-board">
+                <div class="animals-section">
+                    <h3>🐾 動物たち</h3>
+                    <div class="items-grid" id="animalsGrid">
+                        <!-- 動物カードがここに生成される -->
+                    </div>
+                </div>
+
+                <div class="foods-section">
+                    <h3>🍽️ 食べ物</h3>
+                    <div class="items-grid" id="foodsGrid">
+                        <!-- 食べ物カードがここに生成される -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 選択表示 -->
+            <div class="selection-area" id="selectionArea">
+                <div class="selection-item">
+                    <span>選んだ動物:</span>
+                    <div class="selected-card" id="selectedAnimal">選択してください</div>
+                </div>
+                <div class="match-symbol">❤️</div>
+                <div class="selection-item">
+                    <span>選んだ食べ物:</span>
+                    <div class="selected-card" id="selectedFood">選択してください</div>
+                </div>
+            </div>
+
+            <!-- アクションボタン -->
+            <div class="action-buttons">
+                <button class="btn btn-primary" id="checkButton" disabled>
+                    ペアをチェック！
+                </button>
+                <button class="btn btn-secondary" id="resetButton">
+                    選択をリセット
+                </button>
+                <button class="btn btn-success" id="nextButton" style="display: none;">
+                    次のステップ
+                </button>
+            </div>
+
+            <!-- 結果表示 -->
+            <div class="result-area" id="resultArea" style="display: none;">
+                <div class="result-message" id="resultMessage"></div>
+                <div class="result-animation" id="resultAnimation"></div>
+            </div>
+        </div>
+
+        <!-- ゲーム完了画面 -->
+        <div class="completion-screen" id="completionScreen" style="display: none;">
+            <div class="completion-content">
+                <h2>🎉 おめでとう！ 🎉</h2>
+                <p>すべてのペアを見つけることができました！</p>
+                <div class="final-stats">
+                    <div class="final-stat">
+                        <span>正解数:</span>
+                        <span id="finalCorrect">0</span>
+                    </div>
+                    <div class="final-stat">
+                        <span>チャレンジ数:</span>
+                        <span id="finalAttempts">0</span>
+                    </div>
+                    <div class="final-stat">
+                        <span>正解率:</span>
+                        <span id="finalAccuracy">0%</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="playAgainButton">
+                    もう一度遊ぶ
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

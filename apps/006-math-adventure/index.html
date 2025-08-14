@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>さんすうアドベンチャー | Math Adventure</title>
+    <meta name="description" content="小学校低学年向けRPG風計算ゲーム。問題を解いて敵を倒し、レベルアップしよう！">
+    
+    <!-- OGP Meta Tags -->
+    <meta property="og:title" content="さんすうアドベンチャー | Math Adventure">
+    <meta property="og:description" content="小学校低学年向けRPG風計算ゲーム。問題を解いて敵を倒し、レベルアップしよう！">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://euro0707.github.io/app100/apps/006-math-adventure/">
+    <meta property="og:image" content="https://euro0707.github.io/app100/apps/006-math-adventure/ogp-image.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="さんすうアドベンチャー | Math Adventure">
+    <meta name="twitter:description" content="小学校低学年向けRPG風計算ゲーム。問題を解いて敵を倒し、レベルアップしよう！">
+    <meta name="twitter:image" content="https://euro0707.github.io/app100/apps/006-math-adventure/ogp-image.png">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- スタート画面 -->
+    <div id="startScreen" class="screen active">
+        <div class="start-container">
+            <div class="title-logo">
+                <h1>🏰 さんすうアドベンチャー</h1>
+                <p class="subtitle">計算で敵を倒そう！</p>
+            </div>
+            <div class="start-buttons">
+                <button id="newGameBtn" class="btn btn-primary">🆕 あたらしいぼうけん</button>
+                <button id="continueBtn" class="btn btn-secondary">📖 つづきから</button>
+            </div>
+            <div class="game-info">
+                <p>対象年齢：小学校1〜3年生</p>
+                <p>足し算・引き算・かけ算を楽しく学ぼう！</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- メインゲーム画面 -->
+    <div id="gameScreen" class="screen">
+        <div class="game-container">
+            <!-- ヘッダー（プレイヤー情報） -->
+            <div class="game-header">
+                <div class="player-info">
+                    <div class="player-avatar">👤</div>
+                    <div class="player-stats">
+                        <div class="player-name">ゆうしゃ</div>
+                        <div class="player-level">Lv.<span id="playerLevel">1</span></div>
+                        <div class="player-hp">
+                            <span class="hp-label">❤️ HP:</span>
+                            <span id="playerHp">10</span>/<span id="playerMaxHp">10</span>
+                        </div>
+                        <div class="player-coins">
+                            <span class="coins-label">💰</span>
+                            <span id="playerCoins">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button id="shopBtn" class="btn btn-icon">🛒</button>
+                    <button id="settingsBtn" class="btn btn-icon">⚙️</button>
+                    <button id="homeBtn" class="btn btn-icon">🏠</button>
+                </div>
+            </div>
+
+            <!-- バトルエリア -->
+            <div class="battle-area">
+                <!-- 敵情報 -->
+                <div class="enemy-section">
+                    <div class="enemy-container">
+                        <div class="enemy-sprite" id="enemySprite">🐉</div>
+                        <div class="enemy-info">
+                            <div class="enemy-name" id="enemyName">スライム</div>
+                            <div class="enemy-hp">
+                                <div class="hp-bar">
+                                    <div class="hp-bar-fill" id="enemyHpBar"></div>
+                                </div>
+                                <div class="hp-text">
+                                    HP: <span id="enemyHp">5</span>/<span id="enemyMaxHp">5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 計算問題エリア -->
+                <div class="problem-section">
+                    <div class="problem-container">
+                        <div class="problem-text" id="problemText">7 + 4 = ?</div>
+                        <div class="choices-container" id="choicesContainer">
+                            <button class="choice-btn" data-answer="8">8</button>
+                            <button class="choice-btn" data-answer="11">11</button>
+                            <button class="choice-btn" data-answer="12">12</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- メッセージエリア -->
+            <div class="message-area">
+                <div class="message-text" id="messageText">計算問題を解いて敵を攻撃しよう！</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- レベルアップ画面 -->
+    <div id="levelUpScreen" class="screen">
+        <div class="levelup-container">
+            <div class="levelup-animation">
+                <div class="levelup-effect">🎉</div>
+                <h2>レベルアップ！</h2>
+                <div class="levelup-info">
+                    <div class="level-change">
+                        Lv.<span id="oldLevel">1</span> → Lv.<span id="newLevel">2</span>
+                    </div>
+                    <div class="stats-increase">
+                        <div>❤️ HP: <span id="hpIncrease">+5</span></div>
+                        <div>💰 コイン: <span id="coinBonus">+10</span></div>
+                    </div>
+                </div>
+                <button id="levelUpContinueBtn" class="btn btn-primary">つづける</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 設定画面 -->
+    <div id="settingsScreen" class="screen">
+        <div class="settings-container">
+            <div class="settings-header">
+                <h2>⚙️ せってい</h2>
+                <button id="closeSettingsBtn" class="btn btn-icon">✕</button>
+            </div>
+            <div class="settings-content">
+                <div class="setting-item">
+                    <label for="soundToggle">🔊 おと</label>
+                    <input type="checkbox" id="soundToggle" checked>
+                </div>
+                <div class="setting-item">
+                    <label for="difficultySelect">📈 むずかしさ</label>
+                    <select id="difficultySelect">
+                        <option value="easy">やさしい</option>
+                        <option value="normal" selected>ふつう</option>
+                        <option value="hard">むずかしい</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <button id="resetGameBtn" class="btn btn-warning">🔄 ゲームをリセット</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ショップ画面 -->
+    <div id="shopScreen" class="screen">
+        <div class="shop-container">
+            <div class="shop-header">
+                <h2>🛒 ドウグやさん</h2>
+                <button id="closeShopBtn" class="btn btn-icon">✕</button>
+            </div>
+            <div class="shop-content">
+                <div class="coins-display">
+                    <span>💰 所持コイン: <span id="shopPlayerCoins">0</span></span>
+                </div>
+                <div class="shop-items" id="shopItemsContainer">
+                    <!-- アイテムは動的生成 -->
+                </div>
+                <div class="inventory-section">
+                    <h3>📦 もっているアイテム</h3>
+                    <div class="inventory-items" id="inventoryContainer">
+                        <!-- インベントリは動的生成 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- エフェクト用要素 -->
+    <div id="effectsContainer">
+        <div class="damage-effect" id="damageEffect">-1</div>
+        <div class="heal-effect" id="healEffect">+1</div>
+        <div class="sparkle-effect" id="sparkleEffect">✨</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>色と形の記憶ゲーム | 003 - 100 Apps Journey</title>
+    
+    <!-- OGP Meta Tags -->
+    <meta property="og:title" content="色と形の記憶ゲーム | 003 - 100 Apps Journey">
+    <meta property="og:description" content="4〜6歳の子ども向けの記憶力向上ゲーム。色々な形が順番に表示され、覚えた順番でタップして遊びます。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://euro0707.github.io/app100/app/003-memory-game/">
+    <meta property="og:image" content="https://euro0707.github.io/app100/app/003-memory-game/ogp-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="100 Apps Journey">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="色と形の記憶ゲーム | 003 - 100 Apps Journey">
+    <meta name="twitter:description" content="4〜6歳の子ども向けの記憶力向上ゲーム。色々な形が順番に表示され、覚えた順番でタップして遊びます。">
+    <meta name="twitter:image" content="https://euro0707.github.io/app100/app/003-memory-game/ogp-image.png">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="description" content="4〜6歳の子ども向けの記憶力向上ゲーム。色々な形が順番に表示され、覚えた順番でタップして遊びます。">
+    <meta name="keywords" content="記憶,ゲーム,子ども,教育,色,形,知育,脳トレ,記憶力">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- ヘッダー -->
+        <div class="game-header">
+            <h1>🧠 色と形の記憶ゲーム</h1>
+            <p class="instructions">形が出てくる順番を覚えて、同じ順番でタップしよう！</p>
+        </div>
+
+        <!-- ステータス -->
+        <div class="game-stats">
+            <div class="stat-item">
+                <span class="stat-label">レベル</span>
+                <span class="stat-value" id="currentLevel">1</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">形の数</span>
+                <span class="stat-value" id="shapeCount">2</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">得点</span>
+                <span class="stat-value" id="score">0</span>
+            </div>
+        </div>
+
+        <!-- ゲーム進行状況 -->
+        <div class="game-phase" id="gamePhase">
+            <h2 id="phaseTitle">準備中...</h2>
+            <p id="phaseDescription">ゲームを始める準備をしています</p>
+        </div>
+
+        <!-- 親向けヒント -->
+        <div class="parent-hint" id="parentHint">
+            <div class="hint-icon">👨‍👩‍👧‍👦</div>
+            <div class="hint-content">
+                <h3>💡 ヒント</h3>
+                <p id="parentHintText">お子さんと一緒に楽しみましょう！</p>
+            </div>
+        </div>
+
+        <!-- 形表示エリア -->
+        <div class="shapes-display" id="shapesDisplay">
+            <div class="shapes-grid" id="shapesGrid">
+                <!-- 形がここに表示される -->
+            </div>
+        </div>
+
+        <!-- ゲームボタン -->
+        <div class="game-controls">
+            <button class="btn btn-primary" id="startButton">ゲーム開始</button>
+            <button class="btn btn-secondary" id="showSequenceButton" style="display: none;">順番を見る</button>
+            <button class="btn btn-success" id="startMemoryButton" style="display: none;">記憶テスト開始</button>
+            <button class="btn btn-info" id="nextLevelButton" style="display: none;">次のレベル</button>
+            <button class="btn btn-warning" id="restartButton" style="display: none;">もう一度</button>
+        </div>
+
+        <!-- 結果表示 -->
+        <div class="result-area" id="resultArea" style="display: none;">
+            <div class="result-animation" id="resultAnimation">🎉</div>
+            <div class="result-message" id="resultMessage">素晴らしい！</div>
+        </div>
+
+        <!-- 完了画面 -->
+        <div class="completion-screen" id="completionScreen" style="display: none;">
+            <div class="completion-content">
+                <h2>🏆 おめでとう！</h2>
+                <p>すべてのレベルをクリアしました！</p>
+                <div class="final-stats">
+                    <div class="final-stat">
+                        <span>最終得点</span>
+                        <span id="finalScore">0</span>
+                    </div>
+                    <div class="final-stat">
+                        <span>達成レベル</span>
+                        <span id="finalLevel">0</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="playAgainButton">もう一度遊ぶ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

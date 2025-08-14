@@ -1,0 +1,72 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef3c7"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Main Title -->
+  <text x="600" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#92400e">
+    🍎 数のお勉強 🍎
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" fill="#b45309">
+    子ども向け数の概念学習アプリ
+  </text>
+  
+  <!-- Number Examples -->
+  <g transform="translate(200, 250)">
+    <!-- Number 1 -->
+    <rect x="0" y="0" width="150" height="120" rx="15" fill="white" stroke="#10b981" stroke-width="3"/>
+    <text x="75" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#065f46">1</text>
+    <text x="75" y="75" text-anchor="middle" font-size="32">🍎</text>
+  </g>
+  
+  <g transform="translate(375, 250)">
+    <!-- Number 2 -->
+    <rect x="0" y="0" width="150" height="120" rx="15" fill="white" stroke="#10b981" stroke-width="3"/>
+    <text x="75" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#065f46">2</text>
+    <text x="55" y="75" text-anchor="middle" font-size="24">🍎</text>
+    <text x="95" y="75" text-anchor="middle" font-size="24">🍎</text>
+  </g>
+  
+  <g transform="translate(550, 250)">
+    <!-- Number 3 -->
+    <rect x="0" y="0" width="150" height="120" rx="15" fill="white" stroke="#10b981" stroke-width="3"/>
+    <text x="75" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#065f46">3</text>
+    <text x="45" y="75" text-anchor="middle" font-size="20">🍎</text>
+    <text x="75" y="75" text-anchor="middle" font-size="20">🍎</text>
+    <text x="105" y="75" text-anchor="middle" font-size="20">🍎</text>
+  </g>
+  
+  <g transform="translate(725, 250)">
+    <!-- Number 4 -->
+    <rect x="0" y="0" width="150" height="120" rx="15" fill="white" stroke="#10b981" stroke-width="3"/>
+    <text x="75" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#065f46">4</text>
+    <text x="55" y="65" text-anchor="middle" font-size="18">🍎</text>
+    <text x="95" y="65" text-anchor="middle" font-size="18">🍎</text>
+    <text x="55" y="90" text-anchor="middle" font-size="18">🍎</text>
+    <text x="95" y="90" text-anchor="middle" font-size="18">🍎</text>
+  </g>
+  
+  <!-- Features -->
+  <text x="600" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#92400e">
+    📚 数の表示・カウンティングゲーム・学習記録
+  </text>
+  
+  <!-- App Info -->
+  <text x="600" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#b45309">
+    App #001/100 | 100 Apps Journey
+  </text>
+  
+  <!-- URL -->
+  <text x="600" y="570" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#92400e">
+    euro0707.github.io/app100
+  </text>
+</svg>

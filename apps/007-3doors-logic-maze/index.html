@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3つのドア めいろゲーム | 3 Doors Logic Maze</title>
+    <meta name="description" content="4〜6歳向けの論理思考学習迷路ゲーム。乗り物キャラクターと一緒にアイテムを集めて、3つのドアを開く順序を学ぼう！">
+    
+    <!-- OGP Meta Tags -->
+    <meta property="og:title" content="3つのドア めいろゲーム | 3 Doors Logic Maze">
+    <meta property="og:description" content="4〜6歳向けの論理思考学習迷路ゲーム。乗り物キャラクターと一緒にアイテムを集めて、3つのドアを開く順序を学ぼう！">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://euro0707.github.io/app100/apps/007-3doors-logic-maze/">
+    <meta property="og:image" content="https://euro0707.github.io/app100/apps/007-3doors-logic-maze/ogp-image.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="3つのドア めいろゲーム | 3 Doors Logic Maze">
+    <meta name="twitter:description" content="4〜6歳向けの論理思考学習迷路ゲーム。乗り物キャラクターと一緒にアイテムを集めて、3つのドアを開く順序を学ぼう！">
+    <meta name="twitter:image" content="https://euro0707.github.io/app100/apps/007-3doors-logic-maze/ogp-image.png">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- スタート画面 -->
+    <div id="startScreen" class="screen active">
+        <div class="start-container">
+            <div class="title-logo">
+                <h1>🚪 3つのドア<br>めいろゲーム</h1>
+                <p class="subtitle">じゅんばんと じょうけんを まなぼう！</p>
+            </div>
+            
+            <!-- キャラ選択 -->
+            <div class="character-selection">
+                <h2>すきな のりものを えらんでね</h2>
+                <div class="character-grid">
+                    <button class="character-btn" data-vehicle="car">
+                        <div class="vehicle-icon">🚗</div>
+                        <div class="vehicle-name">くるま</div>
+                    </button>
+                    <button class="character-btn" data-vehicle="bus">
+                        <div class="vehicle-icon">🚌</div>
+                        <div class="vehicle-name">バス</div>
+                    </button>
+                    <button class="character-btn" data-vehicle="train">
+                        <div class="vehicle-icon">🚂</div>
+                        <div class="vehicle-name">でんしゃ</div>
+                    </button>
+                    <button class="character-btn" data-vehicle="plane">
+                        <div class="vehicle-icon">✈️</div>
+                        <div class="vehicle-name">ひこうき</div>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="game-info">
+                <p>対象年齢：4〜6歳</p>
+                <p>じゅんばんと じょうけんを おぼえよう！</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- お題画面 -->
+    <div id="taskScreen" class="screen">
+        <div class="task-container">
+            <div class="task-header">
+                <h2>きょうの おだい</h2>
+                <div class="selected-character">
+                    <div class="character-icon" id="taskCharacterIcon">🚗</div>
+                </div>
+            </div>
+            <div class="task-content">
+                <div class="task-text" id="taskText">
+                    まんなかの ドアを あけよう！
+                </div>
+                <div class="task-doors">
+                    <div class="door-preview">
+                        <div class="door left">
+                            <div class="door-condition" id="leftDoorCondition">🔑</div>
+                            <div class="door-label">ひだり</div>
+                        </div>
+                        <div class="door middle highlighted" id="targetDoor">
+                            <div class="door-condition" id="middleDoorCondition">🔘</div>
+                            <div class="door-label">まんなか</div>
+                        </div>
+                        <div class="door right">
+                            <div class="door-condition" id="rightDoorCondition">⭐</div>
+                            <div class="door-label">みぎ</div>
+                        </div>
+                    </div>
+                </div>
+                <button id="startGameBtn" class="btn btn-primary">
+                    はじめる！
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- メインゲーム画面 -->
+    <div id="gameScreen" class="screen">
+        <!-- ゲームヘッダー -->
+        <div class="game-header">
+            <div class="progress-info">
+                <div class="target-door-info">
+                    <span>もくひょう：</span>
+                    <span id="targetDoorText">まんなかのドア</span>
+                </div>
+                <div class="inventory" id="inventory">
+                    <!-- アイテムとスイッチ状態を表示 -->
+                </div>
+            </div>
+            <div class="game-controls">
+                <button id="soundToggleBtn" class="btn btn-icon sound-on" title="音のON/OFF">
+                    🔊
+                </button>
+                <button id="hintBtn" class="btn btn-icon" title="ヒント">
+                    💡
+                </button>
+                <button id="homeBtn" class="btn btn-icon" title="ホームに戻る">
+                    🏠
+                </button>
+            </div>
+        </div>
+
+        <!-- 迷路キャンバス -->
+        <div class="maze-container">
+            <canvas id="mazeCanvas" width="320" height="480"></canvas>
+            <div class="maze-overlay">
+                <!-- ヒント矢印などの表示エリア -->
+                <div id="hintArrow" class="hint-arrow hidden">👆</div>
+            </div>
+        </div>
+
+        <!-- メッセージエリア -->
+        <div class="message-area">
+            <div class="message-text" id="gameMessage">
+                がめんを おしたまま うごいてね
+            </div>
+        </div>
+    </div>
+
+    <!-- 成功画面 -->
+    <div id="successScreen" class="screen">
+        <div class="success-container">
+            <div class="success-animation">
+                <div class="success-vehicle" id="successVehicle">🚗</div>
+                <div class="success-door">🚪</div>
+                <div class="success-effect">✨</div>
+            </div>
+            <h2 class="success-title">やったね！</h2>
+            <div class="success-message" id="successMessage">
+                まんなかのドアが ひらいたよ！
+            </div>
+            <div class="success-buttons">
+                <button id="nextGameBtn" class="btn btn-primary">
+                    つぎの めいろ
+                </button>
+                <button id="backToStartBtn" class="btn btn-secondary">
+                    はじめに もどる
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- エフェクト用要素 -->
+    <div id="effectsContainer">
+        <div class="pickup-effect" id="pickupEffect">+1</div>
+        <div class="switch-effect" id="switchEffect">ON</div>
+        <div class="sparkle-effect" id="sparkleEffect">✨</div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

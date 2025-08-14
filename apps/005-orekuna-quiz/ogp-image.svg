@@ -1,0 +1,123 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE4E1"/>
+      <stop offset="50%" style="stop-color:#FFF8DC"/>
+      <stop offset="100%" style="stop-color:#F0FFFF"/>
+    </linearGradient>
+    <linearGradient id="header" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF6B6B"/>
+      <stop offset="100%" style="stop-color:#4ECDC4"/>
+    </linearGradient>
+    <linearGradient id="canvas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="100%" style="stop-color:#F8F8FF"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- ヘッダー部分 -->
+  <rect x="80" y="80" width="1040" height="120" rx="20" fill="url(#header)" opacity="0.9"/>
+  
+  <!-- タイトル -->
+  <text x="600" y="130" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="48" font-weight="bold">
+    🎨 これなーんだ？
+  </text>
+  <text x="600" y="170" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" opacity="0.9">
+    ヒントをみて　えをかいてみよう！
+  </text>
+  
+  <!-- メインコンテンツエリア -->
+  <g transform="translate(200, 220)">
+    <!-- ヒントボックス -->
+    <rect x="0" y="0" width="400" height="80" rx="15" fill="#FFE4B5" stroke="#FF6B6B" stroke-width="3"/>
+    <text x="200" y="35" text-anchor="middle" fill="#333" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      まるくて　あかい　くだもの
+    </text>
+    <text x="200" y="60" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="14">
+      ↓ えをかいてね ↓
+    </text>
+    
+    <!-- キャンバス -->
+    <rect x="50" y="100" width="300" height="200" rx="10" fill="url(#canvas)" stroke="#4ECDC4" stroke-width="3"/>
+    
+    <!-- 手描き風のりんごの絵 -->
+    <g transform="translate(200, 200)">
+      <!-- りんごの本体 -->
+      <circle cx="0" cy="0" r="45" fill="#FF6B6B" opacity="0.8"/>
+      <circle cx="-10" cy="-10" r="35" fill="#FF8E8E" opacity="0.6"/>
+      
+      <!-- 葉っぱ -->
+      <ellipse cx="15" cy="-35" rx="8" ry="15" fill="#4ECDC4" transform="rotate(30 15 -35)"/>
+      
+      <!-- ハイライト -->
+      <ellipse cx="-15" cy="-15" rx="8" ry="12" fill="white" opacity="0.6"/>
+    </g>
+  </g>
+  
+  <!-- サイドエリア - カラーパレットとツール -->
+  <g transform="translate(680, 280)">
+    <!-- カラーパレット -->
+    <circle cx="0" cy="0" r="20" fill="#000000"/>
+    <circle cx="50" cy="0" r="20" fill="#FF0000"/>
+    <circle cx="100" cy="0" r="20" fill="#00FF00"/>
+    <circle cx="150" cy="0" r="20" fill="#0000FF"/>
+    <circle cx="200" cy="0" r="20" fill="#FFFF00"/>
+    <circle cx="250" cy="0" r="20" fill="#FF00FF"/>
+    
+    <!-- ツールボタン -->
+    <rect x="0" y="50" width="120" height="40" rx="20" fill="#FFF8DC" stroke="#4ECDC4" stroke-width="2"/>
+    <text x="60" y="75" text-anchor="middle" fill="#333" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      🧽 けしごむ
+    </text>
+    
+    <rect x="130" y="50" width="120" height="40" rx="20" fill="#FFF8DC" stroke="#4ECDC4" stroke-width="2"/>
+    <text x="190" y="75" text-anchor="middle" fill="#333" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      🗑️ クリア
+    </text>
+  </g>
+  
+  <!-- 完了ボタン -->
+  <rect x="200" y="520" width="400" height="60" rx="30" fill="url(#header)" opacity="0.9"/>
+  <text x="400" y="560" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+    できたよ！
+  </text>
+  
+  <!-- AI判定エリア -->
+  <g transform="translate(680, 380)">
+    <rect x="0" y="0" width="280" height="180" rx="15" fill="white" stroke="#4ECDC4" stroke-width="2" opacity="0.9"/>
+    
+    <!-- AI アイコン -->
+    <text x="140" y="50" text-anchor="middle" font-size="48">🤖</text>
+    
+    <!-- 判定テキスト -->
+    <text x="140" y="90" text-anchor="middle" fill="#333" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      AIが考え中…
+    </text>
+    
+    <!-- 結果例 -->
+    <rect x="20" y="100" width="240" height="40" rx="10" fill="#FFE4B5"/>
+    <text x="140" y="125" text-anchor="middle" fill="#333" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      これはりんごだね！すごいね！
+    </text>
+    
+    <!-- もう1回ボタン -->
+    <rect x="70" y="150" width="140" height="25" rx="12" fill="#4ECDC4"/>
+    <text x="140" y="167" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      もう1かい！
+    </text>
+  </g>
+  
+  <!-- 装飾要素 -->
+  <circle cx="150" cy="550" r="8" fill="#FF6B6B" opacity="0.6"/>
+  <circle cx="1050" cy="100" r="6" fill="#4ECDC4" opacity="0.8"/>
+  <circle cx="100" cy="300" r="4" fill="#FFFF00" opacity="0.7"/>
+  <circle cx="1100" cy="500" r="5" fill="#FF00FF" opacity="0.5"/>
+  
+  <!-- サブタイトル -->
+  <text x="600" y="600" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="16">
+    4～6歳向け知育アプリ - お絵描きクイズゲーム
+  </text>
+</svg>

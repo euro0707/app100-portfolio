@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>これなーんだ？おえかきクイズ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <header class="header">
+            <h1>🎨 これなーんだ？</h1>
+            <p>ヒントをみて　えをかいてみよう！</p>
+        </header>
+
+        <!-- ゲーム画面 -->
+        <div id="game-screen" class="screen">
+            <!-- ヒント表示 -->
+            <div class="hint-section">
+                <div class="hint-box">
+                    <p id="hint-text">まるくて　あかい　くだもの</p>
+                </div>
+            </div>
+
+            <!-- お絵描きエリア -->
+            <div class="canvas-section">
+                <canvas id="drawing-canvas" width="300" height="300"></canvas>
+                <div class="tools">
+                    <div class="color-tools">
+                        <button class="color-btn active" data-color="#000000" style="background: #000000;"></button>
+                        <button class="color-btn" data-color="#FF0000" style="background: #FF0000;"></button>
+                        <button class="color-btn" data-color="#00FF00" style="background: #00FF00;"></button>
+                        <button class="color-btn" data-color="#0000FF" style="background: #0000FF;"></button>
+                        <button class="color-btn" data-color="#FFFF00" style="background: #FFFF00;"></button>
+                        <button class="color-btn" data-color="#FF00FF" style="background: #FF00FF;"></button>
+                    </div>
+                    <div class="action-tools">
+                        <button id="eraser-btn" class="tool-btn">🧽 けしごむ</button>
+                        <button id="clear-btn" class="tool-btn">🗑️ ぜんぶけす</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 完了ボタン -->
+            <button id="submit-btn" class="submit-btn">できたよ！</button>
+        </div>
+
+        <!-- AI判定画面 -->
+        <div id="thinking-screen" class="screen">
+            <div class="thinking-animation">
+                <div class="thinking-icon">🤖</div>
+                <p id="thinking-text">AIが考え中…</p>
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 結果画面 -->
+        <div id="result-screen" class="screen">
+            <div class="result-content">
+                <div class="celebration">🎉</div>
+                <p id="result-text">これはりんごだね！すごいね！</p>
+                <div class="result-drawing">
+                    <canvas id="result-canvas" width="200" height="200"></canvas>
+                </div>
+                <button id="next-btn" class="next-btn">もう1かい！</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

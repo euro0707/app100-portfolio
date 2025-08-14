@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乗り物パズル | 004 - 100 Apps Journey</title>
+    
+    <!-- OGP Meta Tags -->
+    <meta property="og:title" content="乗り物パズル | 004 - 100 Apps Journey">
+    <meta property="og:description" content="4〜6歳の子ども向けドラッグ&ドロップパズルゲーム。車、電車、飛行機の3段階難易度で空間認識力を育みます。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://euro0707.github.io/app100/app/004-vehicle-puzzle/">
+    <meta property="og:image" content="https://euro0707.github.io/app100/app/004-vehicle-puzzle/ogp-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="100 Apps Journey">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="乗り物パズル | 004 - 100 Apps Journey">
+    <meta name="twitter:description" content="4〜6歳の子ども向けドラッグ&ドロップパズルゲーム。車、電車、飛行機の3段階難易度で空間認識力を育みます。">
+    <meta name="twitter:image" content="https://euro0707.github.io/app100/app/004-vehicle-puzzle/ogp-image.png">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="description" content="4〜6歳の子ども向けドラッグ&ドロップパズルゲーム。車、電車、飛行機の3段階難易度で空間認識力を育みます。">
+    <meta name="keywords" content="パズル,子ども,教育,ゲーム,乗り物,ドラッグアンドドロップ,知育">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🚗 乗り物パズル</h1>
+            <p class="subtitle">パズルを完成させよう！</p>
+        </header>
+
+        <div class="game-area">
+            <!-- レベル選択 -->
+            <div class="level-selection" id="levelSelection">
+                <h2>難易度を選んでね</h2>
+                <div class="level-buttons">
+                    <button class="level-btn" data-level="3">
+                        <div class="level-icon">🚗</div>
+                        <div class="level-text">
+                            <h3>かんたん</h3>
+                            <p>3ピース - くるま</p>
+                        </div>
+                    </button>
+                    <button class="level-btn" data-level="4">
+                        <div class="level-icon">🚂</div>
+                        <div class="level-text">
+                            <h3>ふつう</h3>
+                            <p>4ピース - でんしゃ</p>
+                        </div>
+                    </button>
+                    <button class="level-btn" data-level="6">
+                        <div class="level-icon">✈️</div>
+                        <div class="level-text">
+                            <h3>むずかしい</h3>
+                            <p>6ピース - ひこうき</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ゲーム画面 -->
+            <div class="game-screen hidden" id="gameScreen">
+                <div class="game-header">
+                    <button class="back-btn" id="backBtn">← もどる</button>
+                    <h2 id="currentVehicle">🚗 くるま</h2>
+                    <button class="hint-btn" id="hintBtn">💡 ヒント</button>
+                </div>
+
+                <div class="puzzle-container">
+                    <!-- 完成図（ヒント用） -->
+                    <div class="hint-image hidden" id="hintImage">
+                        <div class="hint-content" id="hintContent"></div>
+                        <p>完成図</p>
+                    </div>
+
+                    <!-- パズル領域 -->
+                    <div class="puzzle-board" id="puzzleBoard"></div>
+
+                    <!-- ピース置き場 -->
+                    <div class="pieces-area">
+                        <h3>ピースをクリックして選び、上の枠をクリックしてね</h3>
+                        <div class="pieces-container" id="piecesContainer"></div>
+                    </div>
+                </div>
+
+                <!-- 完成時の祝賀 -->
+                <div class="celebration hidden" id="celebration">
+                    <div class="celebration-content">
+                        <h2>🎉 やったね！</h2>
+                        <p>パズルが完成したよ！</p>
+                        <div class="celebration-buttons">
+                            <button class="play-again-btn" id="playAgainBtn">もう一度</button>
+                            <button class="back-to-menu-btn" id="backToMenuBtn">メニューへ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>👶 4〜6歳向け | App #004/100</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
